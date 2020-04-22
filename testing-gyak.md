@@ -6,8 +6,10 @@ név és koordináták (latitude - szélesség, longitude - hosszúság).
 
 ## Bevezetés a JUnit használatába
 
+A `locations` csomagba dolgozz!
+
 Hozz létre egy `Location` osztályt,
-`name`, `lat`, `lon` attribútumokkal! A `name` `String` típusú legyen!
+`name`, `lat`, `lon` attribútumokkal! A `name` attribútum `String` típusú legyen!
 A szélességi és hosszúsági koordinátákat
 külön `double` típusú attribútummal ábrázold!
 
@@ -121,11 +123,14 @@ dinamikus teszteseteket úgy, hogy meghívja az `isOnEquator()` metódusukat!
 
 ## Tempdirectory extension
 
-Hozz létre egy `LocationService` nevű osztályt, paraméterként megkap egy `List<Location>` adatstruktúrát,
-és kiírja CSV állományba.
+Hozz létre egy `LocationService` nevű osztályt, abban egy `void writeLocations(Path file, List<Location> locations)`, 
+metódust, mely az első paraméterként megadott fájlba kiírja a második paraméterként megadott helyeket CSV (comma separated values)
+formátumban.
+A helyeket külön sorba írja ki, és a `name`, `lat` és `lon` attribútumok értékeit egymástól vessző (`,`) karakterrel elválasztva.
 
-Írj egy tesztesetet, mely teszteli a kiírást, méghozzá úgy, hogy összehasonlítja a kiírt fájlt az elvárt
-fájlal. Olvasd be mindkettőt egy String-be, és hasonlítsd össze őket!
+Írj egy tesztesetet, mely teszteli a kiírást, méghozzá úgy, hogy kiír pár `Location` példányt, és 
+beolvassa a sorokat egy `List<String>` adatszerkezetbe (használd a `Files.readAllLines()` metódust)! Utána ebben 
+a listában ellenőrizd szúrópróbaszerűen pl. a második elemet, hogy megfelelő-e. Pl. `Budapest,47.497912,19.040235`.
 
 ## JUnit 4 és 5 használata
 

@@ -4,7 +4,7 @@
 
 * Először nézd meg a videót! A videóban szereplő forráskódot a [demos](demos) könyvtárban találod. A slide-okat
   a [testing-slides.md](testing-slides.md) fájl tartalmazza.
-* Elméleti és gyakorlati videók váltják egymást. Minden gyakorlati videó után old meg a videóhoz tartozó 
+* Elméleti és gyakorlati videók váltják egymást. Minden gyakorlati videó után oldd meg a videóhoz tartozó 
   gyakorlati feladatot, melyet a [testing-gyak.md](testing-gyak.md) fájl tartalmaz.
   Dolgozhatsz ugyanabba a projektbe, a gyakorlati feladatok egymásra épülnek.
 
@@ -52,5 +52,5 @@
    * AssertJ újrafelhasználás megvalósítása (gyakorlat)
    * Mockito
    * A Mockito használata (gyakorlat)
-   * Teszt lefedettség
-   * A teszt lefedettség mérése (gyakorlat)
+   * Tesztlefedettség
+   * A tesztlefedettség mérése (gyakorlat)

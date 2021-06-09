@@ -39,7 +39,7 @@ class: inverse, center, middle
 
 * Forráskód legkisebb egységének tesztelésére
   * OO nyelv (pl. Java) esetén osztály
-* Az adott egység helyesen oldja meg a rá bízott feladatot
+* Az adott egység helyesen oldja meg a rábízott feladatot
 * Előírt bemenetre az elvárt kimenetet adja-e
 * Tipikusan automatizált
 * Tipikusan a szoftverfejlesztők írják
@@ -346,7 +346,7 @@ Példányosítás, INIT, TC1, példányosítás, INIT, TC2
 
 ## Metódusok futtatásának <br /> sorrendje
 
-* Nem magától érthetődő, de determinisztikus - azaz ismételhető
+* Nem magától értetődő, de determinisztikus - azaz ismételhető
 * Integrációs teszteknél szükség lehet a sorrend meghatározására
 	* `@TestMethodOrder` annotációval, <br /> `MethodOrderer` implementációval paraméterezhető
 * Sorrendek
@@ -371,7 +371,7 @@ Példányosítás, INIT, TC1, példányosítás, INIT, TC2
 * Feltételes teszt végrehajtás különböző feltételektől függően
 * Pl. operációs rendszer, JVM verziószáma, <br /> operációs rendszer környezeti változó,
 	Java környezeti változó
-* Pl. `@DisabledOnOs(WINDOWS)`
+* Pl. `@DisabledOnOs(OS.WINDOWS)`
 
 ---
 
@@ -383,7 +383,7 @@ class: inverse, center, middle
 
 ## `@DisplayName` annotáció
 
-* Teszt osztályokat és teszt eseteket lehet elnevezni
+* Tesztosztályokat és teszteseteket lehet elnevezni
 * Osztályra és metódusra is tehető `@DisplayName` annotáció, <br /> melynek paraméterül adandó a megjelenítendő név
 * Pl. IDE-ben jelenik meg
 
@@ -399,7 +399,7 @@ void testGetAge() {
 
 ## Display name generation
 
-* Teszt osztály és teszt metódus nevéből generálja <br /> (pl. kis- és nagybetűk konvertálása, aláhúzásjelek cseréje)
+* Tesztosztály és tesztmetódus nevéből generálja <br /> (pl. kis- és nagybetűk konvertálása, aláhúzásjelek cseréje)
 * Megadható a `@DisplayNameGeneration` annotációval
 	* Beépített vagy saját implementáció is használható
 * Globálisan is konfigurálható
@@ -940,7 +940,7 @@ class: inverse, center, middle
 
 ## `@TempDir` annotáció
 
-* Minden teszteset előtt létrehoz ez ideiglenes könyvtárat, és a végén letörli
+* Minden teszteset előtt létrehoz egy ideiglenes könyvtárat, és a végén letörli
 
 ```java
 public class EmployeeWriterTest {
@@ -971,7 +971,7 @@ class: inverse, center, middle
 * JUnit modulok
 	* Platform - tesztesetek futtatására
 	* Jupiter - JUnit 5 tesztek írására
-	* Vinetage - JUnit 4 támogatás
+	* Vintage - JUnit 4 támogatás
 * Maven - függőségek felvétele
 
 ---
@@ -1734,7 +1734,7 @@ class: inverse, center, middle
 ## Működési mód
 
 * In-container működési mód
-* Teszt osztályonként elkészít egy telepítőcsomagot, melyben benne van a teszt eset is
+* Teszt osztályonként elkészít egy telepítőcsomagot, melyben benne van a teszteset is
 * Telepíti a szerverre
 * Konténeren belül futtatja
 	* `System.out.println` alkalmazásszerver napló állományában jelenik meg
@@ -1744,7 +1744,7 @@ class: inverse, center, middle
 
 ---
 
-## Teszt eset
+## Teszteset
 
 * Un. _micro deployment_ összeállítása `ShrinkWrap` segítségével
 	* Mi kerüljön be a jar, war, ear állományba, mely telepítésre kerül
@@ -1756,7 +1756,7 @@ class: inverse, center, middle
 
 ---
 
-## Teszt eset implementáció
+## Teszteset implementáció
 
 ```java
 @RunWith(Arquillian.class)
@@ -1976,7 +1976,7 @@ public class EmployeeDaoBeanIntegrationTest {
 
 ---
 
-## Teszt eset
+## Teszteset
 
 ```java
 @RunWith(Arquillian.class)
@@ -1998,7 +1998,7 @@ public class EmployeeDaoBeanIntegrationTest {
 
 ---
 
-## Teszt eset - inicializáció a given részben
+## Teszteset - inicializáció a given részben
 
 ```java
 @RunWith(Arquillian.class)
@@ -2036,7 +2036,7 @@ class: inverse, center, middle
 
 * JUnitra épülő tesztelésre használható library
 * Használható
-    * Adatbázis iniciakizálására
+    * Adatbázis inicializálására
     * Adatbázis elvárt állapotának ellenőrzésére
 * Adatok betöltése különböző forrásokból
     * Adatbázis

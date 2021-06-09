@@ -105,12 +105,12 @@ Teszteld az `isOnEquator()` metódust! Vegyél fel egy tömbbe pár `Location` o
 Tömbök tömbjét használj, azaz vegyél fel egy `boolean` értéket is, hogy mely esetén kell a tesztelendő metódusnak `true`
 értéket visszaadnia!
 
-Ismétlődő tesztekkel menj végig a tömbön, hívd meg az adott `Location` isOnEquator()` metódusát, és vizsgáld, hogy a mellette
+Ismétlődő tesztekkel menj végig a tömbön, hívd meg az adott `Location` `isOnEquator()` metódusát, és vizsgáld, hogy a mellette
 megadott `boolean` értéket adja-e vissza.
 
 ## Paraméterezett tesztek
 
-Implementáld az előző feladatot a `isOnPrimeMeridian()` metódusra, de most `MethodSource` használatával!
+Implementáld az előző feladatot az `isOnPrimeMeridian()` metódusra, de most `MethodSource` használatával!
 
 Tegyél ki egy CSV állományba négy koordinátát, valamint a köztük lévő távolságot méterben! (A `Location` neve mindegy.)
 Példányosíts le egy `Location` példányt az első két koordinátával, majd egy másikat a harmadik-negyedik paraméterrel,

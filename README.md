@@ -1,56 +1,52 @@
 # Szoftvertesztelés Java platformon
 
-## Javasolt haladás
-
-* Először nézd meg a videót! A videóban szereplő forráskódot a [demos](demos) könyvtárban találod. A slide-okat
-  a [testing-slides.md](testing-slides.md) fájl tartalmazza.
-* Elméleti és gyakorlati videók váltják egymást. Minden gyakorlati videó után old meg a videóhoz tartozó 
-  gyakorlati feladatot, melyet a [testing-gyak.md](testing-gyak.md) fájl tartalmaz.
-  Dolgozhatsz ugyanabba a projektbe, a gyakorlati feladatok egymásra épülnek.
-
 ## Tematika
 
-* Ismerkedés a szoftverteszteléssel Java platformon
+* JUnit bevezetés
    * Bevezetés a JUnit használatába
-   * Az első teszteset létrehozása (gyakorlat)
+   * Bevezetés a JUnit használatába - gyakorlat
    * Unit tesztelés ígéretei
    * Futtatás Mavennel
-   * Tesztesetek futtatása Mavennel (gyakorlat)
+   * Futtatás Mavennel - gyakorlat
    * Tesztesetek életciklusa
-   * Tesztesetek életciklusa a gyakorlatban (gyakorlat)
-   * A BeforeEach annotált metódus kiszervezése (gyakorlat)
+   * Tesztesetek életciklusa - gyakorlat
+   * Tesztesetek életciklusa - a BeforeEach annotált metódus kiszervezése - gyakorlat
    * Elnevezések
    * Elnevezések a gyakorlatban (gyakorlat)
-* A különböző tesztek felépítése
    * Assert
-   * Az Assert metódus használata a gyakorlatban (gyakorlat)
+   * Assert - gyakorlat
+* Haladó JUnit
    * Kivételkezelés és timeout tesztelése
-   * Kivételkezelés tesztelése a gyakorlatban (gyakorlat)
+   * Kivételkezelés és timeout tesztelése - gyakorlat
    * Egymásba ágyazás
-   * Tesztesetek egymásba ágyazásának implementálása (gyakorlat)
+   * Egymásba ágyazás - gyakorlat
    * Tagek és metaannotációk használata
-   * Tesztesetek csoportosítása a gyakorlatban (gyakorlat)
+   * Tagek és metaannotációk használata - gyakorlat
    * Tesztesetek ismétlése
-   * Tesztesetek ismétlésének implementálása (gyakorlat)
+   * Tesztesetek ismétlése - gyakorlat
    * Paraméterezett tesztek
-   * Tesztek paraméterezésének implementálása (gyakorlat)
+   * Paraméterezett tesztek - gyakorlat
    * Dinamikus tesztek
-   * Dinamikus teszt implementálása (gyakorlat)
-   * Tempdirectory extension
-   * A fájlkezelő metódusok tesztelése (gyakorlat)
-* Tesztelés a JUniton túl
+   * Dinamikus tesztek - gyakorlat
+   * Temp directory extension
+   * Temp directory extension - gyakorlat
+   * JUnit legjobb gyakorlatok
+* JUnit 4 és 5 együttes használata
    * JUnit 4 és 5 használata
-   * JUnit 5 használata (gyakorlat)
-   * Junit legjobb gyakorlatok
+   * JUnit 4 és 5 használata - gyakorlat
+* Hamcrest 
    * Hamcrest
    * Hamcrest használata a gyakorlatban (gyakorlat)
    * Saját Hamcrest matcher implementálása
    * Saját Hamcrest matcher készítése a gyakorlatban (gyakorlat)
+* AssertJ
    * AssertJ
    * Az AssertJ használata (gyakorlat)
    * AssertJ kiterjeszthetőség
    * AssertJ újrafelhasználás megvalósítása (gyakorlat)
+* Mockito
    * Mockito
    * A Mockito használata (gyakorlat)
-   * Teszt lefedettség
-   * A teszt lefedettség mérése (gyakorlat)
+* Tesztlefedettség
+   * Tesztlefedettség
+   * A tesztlefedettség mérése (gyakorlat)

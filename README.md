@@ -36,17 +36,17 @@
    * JUnit 4 és 5 használata - gyakorlat
 * Hamcrest 
    * Hamcrest
-   * Hamcrest használata a gyakorlatban (gyakorlat)
+   * Hamcrest - gyakorlat
    * Saját Hamcrest matcher implementálása
-   * Saját Hamcrest matcher készítése a gyakorlatban (gyakorlat)
+   * Saját Hamcrest matcher implementálása - gyakorlat
 * AssertJ
    * AssertJ
-   * Az AssertJ használata (gyakorlat)
+   * AssertJ - gyakorlat
    * AssertJ kiterjeszthetőség
-   * AssertJ újrafelhasználás megvalósítása (gyakorlat)
+   * AssertJ kiterjeszthetőség - gyakorlat
 * Mockito
    * Mockito
-   * A Mockito használata (gyakorlat)
+   * Mockito - gyakorlat
 * Tesztlefedettség
    * Tesztlefedettség
-   * A tesztlefedettség mérése (gyakorlat)
+   * Tesztlefedettség - gyakorlat

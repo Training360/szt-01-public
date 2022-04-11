@@ -26,6 +26,7 @@ public class EmployeeServiceTest {
     void testSaveEmployee() {
         assertTrue(employeeService.createEmployee("   John Doe    ", 1970));
 
+        verify(employeeRepository).saveEmployee(any());
         verify(employeeRepository).saveEmployee(argThat(e -> e.getName().equals("John Doe")));
     }
 

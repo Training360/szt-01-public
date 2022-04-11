@@ -16,6 +16,11 @@ public class EmployeeServiceWithAssertJSoftTest {
 
         Employee employee = employees.get(0);
 
+//        SoftAssertions softly = new SoftAssertions();
+//        softly.assertThat(employee.getName()).startsWith("xxx");
+//        softly.assertThat(employee.getName()).endsWith("yyy");
+//        softly.assertAll();
+
         softly.assertThat(employee.getName()).startsWith("John");
         softly.assertThat(employee.getName()).endsWith("Doe");
 

@@ -7,7 +7,6 @@ import java.util.List;
 
 import static empapp.EmployeeAssert.assertThat;
 
-
 public class EmployeeServiceAssertJExtensionTest {
 
     @Test

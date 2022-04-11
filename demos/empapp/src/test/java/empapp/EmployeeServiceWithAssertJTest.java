@@ -25,11 +25,16 @@ public class EmployeeServiceWithAssertJTest {
                 .endsWith("Doe");
 
         assertThat(employees)
+                .hasSize(2)
+                .extracting(Employee::getName)
+                .contains("John Doe");
+
+        assertThat(employees)
                 .as("Contains two elements, John is the first")
                 .hasSize(2)
                 .extracting(Employee::getName, Employee::getYearOfBirth)
                 .contains(tuple("John Doe", 1970));
 
-        // assumeThat(employee.getName()).isEqualTo("xxx");
+//         assumeThat(employee.getName()).isEqualTo("xxx");
     }
 }

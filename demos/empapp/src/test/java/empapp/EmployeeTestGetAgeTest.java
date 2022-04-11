@@ -3,13 +3,13 @@ package empapp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Tag;
 
+//@Tag("entity")
 @EntityTest
 public class EmployeeTestGetAgeTest {
 
     Employee employee;
-
-
 
     @Nested
     class WithAge1970 {
@@ -42,6 +42,4 @@ public class EmployeeTestGetAgeTest {
         void testGetAge1970Jane() {
         }
     }
-
-
 }

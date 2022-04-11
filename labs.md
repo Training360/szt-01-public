@@ -13,10 +13,10 @@ Hozz létre egy `Location` osztályt,
 A szélességi és hosszúsági koordinátákat
 külön `double` típusú attribútummal ábrázold!
 
-Legyenek getter/setter metódusai, és konstruktora, ahol mind a
+Legyenek getter/setter metódusai és konstruktora, ahol mind a
 három attribútumát meg lehet adni!
 
-Hozz létre egy `LocationParser` osztályt, mely feladata szöveges értékből
+Hozz létre egy `LocationParser` osztályt, melynek feladata szöveges értékből
 kinyerni egy kedvenc hely adatait!
 Legyen egy `public Location parse(String text)` metódusa, mely a nevet és a
 koordinátákat vesszővel elválasztva várja (pl. `Budapest,47.497912,19.040235`)! A tizedeshatároló karakter legyen a
@@ -32,7 +32,7 @@ Futtasd le a tesztesetet Mavenből!
 
 Írj egy `isOnEquator()` metódust, mely `true` értéket ad vissza, ha a pont az egyenlítőn van (`latitude == 0`).
 Írj egy `isOnPrimeMeridian()` metódust, mely `true` értéket ad vissza, ha a
-pont a kezdő meridiánon van (`lon == 0`).
+pont a kezdő meridiánon van (`longitude == 0`).
 
 Írj rá teszteseteket! A `@BeforeEach` metódusban hozz létre egy `LocationParser` példányt,
 majd tárold el egy attribútumban. A tesztesetek ezt az attribútumot használják!
@@ -82,11 +82,13 @@ mely csak az északon lévő pontokat adja vissza (`latitude > 0`)!
 
 Írj rá tesztesetet a `LocationOperatorsTest` osztályban (ellenőrizz a nevekre)!
 
-A teszteléshez hozz létre egy osztályszintű Location listát, majd egy BeforeEach annotációval ellátott metódussal töltsd föl három Location-nel, melyek közül egyik a déli féltekén helyezkedik el. A testNorthLocations metódusban ellenőrizd, hogy valóban csak az északiakat adja-e vissza a logika.
+A teszteléshez hozz létre egy osztályszintű Location listát, majd egy `@BeforeEach` annotációval ellátott metódussal 
+töltsd föl három Location-nel, melyek közül egyik a déli féltekén helyezkedik el. A `testNorthLocations()` metódusban 
+ellenőrizd, hogy valóban csak az északiakat adja-e vissza a logika.
 
-A `LocationTest` osztályban hozz létre egy `testDifferentLocations` nevű metódust!
+A `LocationTest` osztályban hozz létre egy `testDifferentLocations()` nevű metódust!
 Ebben példányosíts két új locationt úgy, hogy az attribútumaik legyenek azonosak!
-Egy `AssertAll`-on belül hívd meg egymás után az `assertEquals`-t és az `AssertNotSame`-et a két locationre!
+Egy `assertAll`-on belül hívd meg egymás után az `assertEquals`-t és az `assertNotSame`-et a két locationre!
 A `Location` osztályban override-old úgy az `equals()` metódust, hogy sikeresen lefusson a teszteset!
 
 ## Kivételkezelés és timeout tesztelése
@@ -97,7 +99,7 @@ A szélesség értéke -90 és 90 közötti, a hosszúság értéke -180 és 180
 
 ## Egymásba ágyazás
 
-Hozz létre egy `LocationNestedTest` osztályt, melynek `@BeforeEach` annotációval ellátott metódusa
+Hozz létre egy `LocationNestedTest` osztályt, melynek `BeforeEach` annotációval ellátott metódusa
 példányosítson egy `LocationParser` osztályt! Majd az egyik belső osztály `@BeforeEach`
 annotációval ellátott metódusa hozzon létre egy kedvenc helyet `0,0` koordinátákkal,
 egy másik belső osztály pedig `47.497912,19.040235` koordinátákkal! Mindegyikben legyenek teszt metódusok
@@ -105,28 +107,36 @@ az `isOnEquator()` és `isOnPrimeMeridian()` metódusokra!
 
 ## Tagek és metaannotációk használata
 
-Hozz létre egy `LocationOperationsFeatureTest` annotációt, és tedd rá arra a `LocationOperatorsTest` osztályra,
+Hozz létre egy `LocationOperationsFeatureTest` annotációt, és tedd rá a `LocationOperatorsTest` osztályra,
 és próbáld csak ezt futtatni IDEA-ból és Mavenből is!
 
 ## Tesztesetek ismétlése
 
-Hozd létre a `LocationRepeatTest` osztályt, majd ebbe egy `int[][]` tömbök tömbje attribútumot!  
+Hozd létre a `LocationRepeatTest` osztályt, majd ebbe egy `double[][]` tömbök tömbje attribútumot!  
 
-Vegyél fel benne négy darab olyan tömböt, amelyek három-három számot tartalmaznak! Az első kettő a `latitude` és `longitude` értékek, a harmadik pedig `1` vagy `0`, ami egy `true/false` értéket jelöl. A harmadik értékek ott legyenek `1`-ek (azaz `true`-k), ahol az első koordináta `0`, tehát igaz, hogy a location az egyenlítőn található! Legyen két ilyen a tömbben!  
-Hozd létre a következő teszt metódust: `void testEquator(RepetitionInfo info)`!  
-Ez négyszer fusson le, és az annotációban állítsd be a `name` értéket, hogy írja ki a jelenlegi és a teljes ciklus számot! (pl. `"1 / 4"`)!  
-Ezzel az ismétlődő teszttel menj végig a tömbön, hívd meg az adott `Location` `isOnEquator()` metódusát, és vizsgáld, hogy a mellette megadott `boolean` értéket adja-e vissza!
+Vegyél fel benne négy darab olyan tömböt, amelyek három-három számot tartalmaznak! Az első kettő 
+a `latitude` és `longitude` értékek, a harmadik pedig `1` vagy `0`, ami egy `true/false` értéket jelöl. 
+A harmadik értékek ott legyenek `1`-ek (azaz `true`-k), ahol az első koordináta `0`, tehát igaz, hogy a 
+location az egyenlítőn található! Legyen két ilyen a tömbben!  
+Hozd létre a következő tesztmetódust: `void testEquator(RepetitionInfo info)`!  
+Ez négyszer fusson le, és az annotációban állítsd be a `name` értéket, hogy írja ki a jelenlegi és 
+a teljes ciklus számot! (pl. `"1 / 4"`)!  
+Ezzel az ismétlődő teszttel menj végig a tömbön, hívd meg az adott `Location` `isOnEquator()` metódusát, 
+és vizsgáld, hogy a mellette megadott `boolean` értéket adja-e vissza!
 
 ## Paraméterezett tesztek
 
-Hozd létre a következő teszt metódust: `void testPrimeMeridian(int latitude, int longitude, int expected)`!  
-Állítsd be rajta a `ParameterizedTest` annotációt, valamint annak a `name` értéket, hogy írja ki az aktuális három értéket (pl. `"Latitude = 50, Longitude = 0, Expected = true"`)!  
+Hozd létre a következő tesztmetódust: `void testPrimeMeridian(int latitude, int longitude, int expected)`!  
+Állítsd be rajta a `ParameterizedTest` annotációt, valamint annak a `name` értéket, hogy írja ki az 
+aktuális három értéket (pl. `"Latitude = 50, Longitude = 0, Expected = true"`)!  
 Lásd el `MethodSource` annotációval, amely hivatkozzon egy ilyen metódusra: `static Stream<Arguments> getLocations()`!  
-Legyen négy `Arguments`, melyek tartalmazzanak két számot és egy boolean értéket az előző feladatban leírtakhoz hasonlóan, csak itt a harmadik értékek akkor legyenek `true`-k, ha a második koordináta nulla! 
-Teszteld az `isOnPrimeMeridian()` metódust!
+Legyen négy `Arguments`, melyek tartalmazzanak két számot és egy boolean értéket az előző feladatban 
+leírtakhoz hasonlóan, csak itt a harmadik értékek akkor legyenek `true`-k, ha a második koordináta nulla! 
+Teszteld velük az `isOnPrimeMeridian()` metódust!
 
-Hozz létre egy `testPrimeMeridianFromFile` nevű metódust az előző mintájára!  
-Cseréld le a `MethodSource` annotációt a `CsvFileSource`-ra! Az `src/test/resources` mappába hozz létre egy `location.csv` fájlt, amiben vedd fel négy sorban ugyanazokat az értékeket, mint az előző feladatban!  
+Hozz létre egy `testPrimeMeridianFromFile()` nevű metódust az előző mintájára!  
+Cseréld le a `MethodSource` annotációt a `CsvFileSource`-ra! Az `src/test/resources` mappába hozz 
+létre egy `location.csv` fájlt, amiben vedd fel négy sorban ugyanazokat az értékeket, mint az előző feladatban!  
 
 ## Dinamikus tesztek
 
@@ -138,7 +148,8 @@ dinamikus teszteseteket úgy, hogy meghívja az `isOnEquator()` metódusukat!
 Hozz létre egy `LocationsWriter` nevű osztályt, abban egy `void writeLocations(Path file, List<Location> locations)`, 
 metódust, mely az első paraméterként megadott fájlba kiírja a második paraméterként megadott helyeket CSV (comma separated values)
 formátumban.
-A helyeket külön sorba írja ki, és a `name`, `latitude` és `longitude` attribútumok értékeit egymástól vessző (`,`) karakterrel elválasztva.
+A helyeket külön sorba írja ki, és a `name`, `latitude` és `longitude` attribútumok értékeit egymástól vessző (`,`) 
+karakterrel elválasztva.
 
 Írj egy tesztesetet, mely teszteli a kiírást, méghozzá úgy, hogy kiír pár `Location` példányt, és 
 beolvassa a sorokat egy `List<String>` adatszerkezetbe (használd a `Files.readAllLines()` metódust)! Utána ebben 
@@ -152,9 +163,10 @@ a listában ellenőrizd szúrópróbaszerűen pl. a második elemet, hogy megfel
 
 ## Hamcrest
 
-Hozz létre egy `LocationService` osztályt, amibe írj egy metódust, mely egy CSV fájlból felolvassa a benne szereplő kedvenc helyeket, majd visszaad egy `Location` listát!  
-A csv fájlban soronként egy `Location` értékei szerepeljenek vesszővel elválasztva. (pl. `Budapest,47.497912,19.040235`)  
-Hozz létre egy `LocationServiceHamcrestTest` osztályt, amiben írj egy `testReadLocations` metódust, amivel teszteld a beolvasást!
+Hozz létre egy `LocationsReader` osztályt, amibe írj egy metódust, mely egy CSV fájlból felolvassa a benne szereplő kedvenc 
+helyeket, majd visszaad egy `Location` listát!  
+A CSV fájlban soronként egy `Location` értékei szerepeljenek vesszővel elválasztva. (pl. `Budapest,47.497912,19.040235`)  
+Hozz létre egy `LocationsReaderHamcrestTest` osztályt, amiben írj egy `testReadLocations()` metódust, amivel teszteld a beolvasást!
 
 A visszaadott `List<Location>` adatstruktúrára Hamcrest asserteket írj!
 
@@ -167,10 +179,12 @@ A visszaadott `List<Location>` adatstruktúrára Hamcrest asserteket írj!
 
 ## AssertJ
 
-Hozz létre egy `LocationServiceAssertJTest` osztályt, amiben írj egy `testReadLocations` metódust, amivel teszteld a beolvasást!
+Hozz létre egy `LocationsReaderTest` osztályt, amiben írj egy `testReadLocations()` metódust, amivel teszteld a beolvasást!
 
-A `LocationService` osztályba írj egy metódust (`filterLocationsBeyondArcticCircle`), mely kap egy Location listát, majd stream segítségével kiszűri az északi sarkkörön (66.57 fok) túli koordinátával rendelkezőket, és ezen helyeket adja vissza egy listában!  
-A tesztelésnél használd az előző feladat beolvasó metódusát, és módosítsd a CSV fájt, hogy tartalmazzon kettő lokációt, ami megfelel a feltételnek! (Ha szükséges, módosítsd az előző tesztesetet, hogy lefusson!)  
+A `LocationsReader` osztályba írj egy metódust (`filterLocationsBeyondArcticCircle()`), mely kap egy Location listát, majd 
+stream segítségével kiszűri az északi sarkkörön (66.57 fok) túli koordinátával rendelkezőket, és ezen helyeket adja vissza egy listában!  
+A tesztelésnél használd az előző feladat beolvasó metódusát, és módosítsd a CSV fájt, hogy tartalmazzon kettő lokációt, 
+ami megfelel a feltételnek! (Ha szükséges, módosítsd az előző tesztesetet, hogy lefusson!)  
 Írj egy tesztesetet, mely egy fluent ellenőrzés során kigyűjti a helyek neveit, és megvizsgálja a következőket:
 
 * pontosan mennyi elemet tartalmaz
@@ -183,16 +197,19 @@ Az előző tesztmetódusba vegyél fel még egy `assertThat`-et, és fluent mód
 * A sarkörön túli lokációk listáját szűrd tovább, hogy csak azokat adja vissza, ahol a hosszúsági és szélességi értékek azonosak. (Ehhez a CSV fájlban módosítsd az egyik sort, ha kell!)
 * Ezt követően nyerd ki belőle a `name` és `latitude` párost!
 * Végül ellenőrizd, hogy valóban csak azt az egy eredményt tartalmazza, amit kell!
-  
-* Egy új tesztmetódusban példányosíts egy új Location-t "Abc" névvel, majd két `assertThat`-tel vizsgáld meg, hogy
-  a neve `b`-vel kezdődik-e, majd hogy `b`-vel végződik-e! Futtasd le a tesztesetet, és figyeld meg, hogy csak az első hibás ellenőrzést írja ki!  
-Ezután írd át, hogy a `SoftAssertion` használatával mindkét hiba megjelenjen a konzolon! Próbáld ki az `assertAll`-al és az`@ExtendWith`-el is!
+* Egy új tesztmetódusban példányosíts egy új Location-t "Abc" névvel, majd két `assertThat()`-tel vizsgáld meg, hogy
+  a neve `b`-vel kezdődik-e, majd hogy `b`-vel végződik-e! Futtasd le a tesztesetet, és figyeld meg, hogy csak az 
+  első hibás ellenőrzést írja ki!  
+Ezután írd át, hogy a `SoftAssertion` használatával mindkét hiba megjelenjen a konzolon! Próbáld ki az `assertAll`-al 
+  és az`@ExtendWith` annotációval is!
 
 ## AssertJ kiterjeszthetőség
 
-Definiálj egy olyan `Condition<Location>` feltételt a `testWithCondition` metódusba, ami azt vizsgálja, hogy a kedvenc hely legalább egyik koordinátája 0!
+Definiálj egy olyan `Condition<Location>` feltételt a `testWithCondition()` metódusba, ami azt vizsgálja, hogy a 
+kedvenc hely legalább egyik koordinátája 0!
 
-Írj egy saját Assertet `LocationAssert` néven, amely tartalmaz egy `isNearTheArcticCircle` nevű metódust, mely azt visgálja, hogy az aktuális Location `latitude` értéke legfeljebb két fokkal tér el az északi sarkkörtől!  
+Írj egy saját Assertet `LocationAssert` néven, amely tartalmaz egy `isNearTheArcticCircle()` nevű metódust, 
+mely azt vizsgálja, hogy az aktuális Location `latitude` értéke legfeljebb két fokkal tér el az északi sarkkörtől!  
 Állíts be saját hibaüzenetet is!  
 Írj teszteseteket erre az assertre! Ellenőrizd a hibás lefutást is, hogy megfelelően jelenik-e meg az üzenet!
 
@@ -220,7 +237,10 @@ Mindegyik esetben teszteld, hogy a kimockolt osztályod metódusai pontosan az e
 
 A `LocationsRepository` tartalmazzon egy `Optional<Double> findLatitudeByName(String name)` metódust is!
 
-A `LocationsService` tartalmazzon egy `public boolean isOnNorthernHemisphere(String name)` metódust is, mely meghívja a `findLatitudeByName`-et. Ha ennek a visszatérési értéke üres, dobjon egy `IllegalArgumentException`-t! Ha nem üres, akkor megvizsgálja a kapott `latitude` értéket, és ha az az északi féltekén található, `true`-t ad vissza, ellenkező esetben `false`-t.
+A `LocationsService` tartalmazzon egy `public boolean isOnNorthernHemisphere(String name)` metódust is, 
+mely meghívja a `findLatitudeByName`-et. Ha ennek a visszatérési értéke üres, dobjon egy `IllegalArgumentException`-t! 
+Ha nem üres, akkor megvizsgálja a kapott `latitude` értéket, és ha az az északi féltekén található, `true`-t ad vissza, 
+ellenkező esetben `false`-t.
 
 Írj három külön tesztet a `isOnNorthernHemisphere` metódusra:
 
@@ -228,11 +248,11 @@ A `LocationsService` tartalmazzon egy `public boolean isOnNorthernHemisphere(Str
 - a visszatérési érték `false`, amennyiben `-42` a `latitude` értéke
 - hibát dob, amennyiben amennyiben `Optional.empty()` a `latitude` értéke
 
-Ezeknek a teszteknek a végén is ellenőrizd, hogy a kimockold osztályod metódusai pontosan az elvárt alkalommal lettek meghívva!
+Ezeknek a teszteknek a végén is ellenőrizd, hogy a kimockolt osztályod metódusai pontosan az elvárt alkalommal lettek meghívva!
 
-## Teszt lefedettség
+## Tesztlefedettség
 
-Futtass teszt lefedettség mérést a projekten IDEA és Jacoco segítségével is.
+Futtass tesztlefedettség mérést a projekten IDEA és Jacoco segítségével is.
 Hasonlítsd össze, hogy ugyanazt az eredményt hozza-e a kettő!
 
 A nem lefedett területekre írj tesztet!

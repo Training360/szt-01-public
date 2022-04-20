@@ -21,7 +21,7 @@ kinyerni egy kedvenc hely adatait!
 Legyen egy `public Location parse(String text)` metódusa, mely a nevet és a
 koordinátákat vesszővel elválasztva várja (pl. `Budapest,47.497912,19.040235`)! A tizedeshatároló karakter legyen a
 pont! Ez a metódus visszaad egy új példányt, kitöltve a megfelelő attribútum értékekkel.
-Írj rá egy `LocationTest` osztályt, valamint egy `testParse()` metódust,
+Írj rá egy `LocationParserTest` osztályt, valamint egy `testParse()` metódust,
 mely ezt a metódust teszteli!
 
 ## Futtatás Mavennel
@@ -34,7 +34,8 @@ Futtasd le a tesztesetet Mavenből!
 Írj egy `isOnPrimeMeridian()` metódust, mely `true` értéket ad vissza, ha a
 pont a kezdő meridiánon van (`longitude == 0`).
 
-Írj rá teszteseteket! A `@BeforeEach` metódusban hozz létre egy `LocationParser` példányt,
+Hozz létre egy `LocationTest` osztályt!
+Írj az előző két metódusra teszteseteket! A `@BeforeEach` metódusban hozz létre egy `LocationParser` példányt,
 majd tárold el egy attribútumban. A tesztesetek ezt az attribútumot használják!
 
 ## Elnevezések
@@ -126,7 +127,7 @@ Ezzel az ismétlődő teszttel menj végig a tömbön, hívd meg az adott `Locat
 
 ## Paraméterezett tesztek
 
-Hozd létre a következő tesztmetódust: `void testPrimeMeridian(int latitude, int longitude, int expected)`!  
+Hozd létre a következő tesztmetódust: `void testPrimeMeridian(int latitude, int longitude, boolean expected)`!  
 Állítsd be rajta a `ParameterizedTest` annotációt, valamint annak a `name` értéket, hogy írja ki az 
 aktuális három értéket (pl. `"Latitude = 50, Longitude = 0, Expected = true"`)!  
 Lásd el `MethodSource` annotációval, amely hivatkozzon egy ilyen metódusra: `static Stream<Arguments> getLocations()`!  

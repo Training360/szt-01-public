@@ -26,33 +26,6 @@ class LocationTest {
         locationParser = new LocationParser();
     }
 
-    //Bevezetés a JUnit használatába
-    @Test
-    @DisplayName("Test if Location is correctly parsed from text.")
-    void testParse() {
-        Location location = locationParser.parse("Budapest,47.497912,19.040235");
-
-        assertEquals("Budapest", location.getName());
-        assertEquals(47.497912d, location.getLatitude());
-        assertEquals(19.040235d, location.getLongitude());
-    }
-
-    @Test
-    @DisplayName("Test if Exception is thrown, when parameter text has two parts.")
-    void testParseWithWrongParameterTwoParts() {
-        Exception ex = assertThrows(IllegalArgumentException.class,
-                () -> locationParser.parse("Budapest47.497912,19.040235"));
-        assertEquals("Something is wrong with parameter text.", ex.getMessage());
-    }
-
-    @Test
-    @DisplayName("Test if Exception is thrown, when double numbers in parameter are wrong.")
-    void testParseWithWrongParameterWrongNumbers() {
-        Exception ex = assertThrows(IllegalArgumentException.class,
-                () -> locationParser.parse("Budapest,latitude=47.497912,longitude=19.040235"));
-        assertEquals("Something is wrong with parameter text.", ex.getMessage());
-    }
-
     //Tesztesetek életciklusa
     @Test
     @DisplayName("Test if method returns true when town is on the Equator.")

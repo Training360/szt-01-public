@@ -400,16 +400,18 @@ void testGetAge() {
 ## Display name generation
 
 * Tesztosztály és tesztmetódus nevéből generálja <br /> (pl. kis- és nagybetűk konvertálása, aláhúzásjelek cseréje)
-* Megadható a `@DisplayNameGeneration` annotációval
+* Megadható az osztályra tett `@DisplayNameGeneration` annotációval
 	* Beépített vagy saját implementáció is használható
 * Globálisan is konfigurálható
 
 ```java
-@Test
-@DisplayNameGeneration
-  (DisplayNameGenerator.ReplaceUnderscores.class)
-void get_age_with_positive_number() {
-	// ...
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+class EmployeeTest {
+    
+    @Test
+    void get_age_with_positive_number() {
+        // ...
+    }
 }
 ```
 
